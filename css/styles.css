@@ -1,0 +1,162 @@
+:root {
+    --red: #dc413e;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inner-container,
+section {
+    padding: 1rem;
+}
+
+/* ***************** typography ********************* */
+h2,
+h3 {
+    color: var(--red);
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    font-weight: 200;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+/* ***************** header ********************* */
+/* TODO: create a sticky header that will scroll until the nav links hit the top of the viewport */
+header {
+    background-color: #000;
+    fill: #fff;
+    position: sticky;
+    top: -90px;
+}
+
+header svg {
+    width: 4.6875rem;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 0 0.5rem;
+}
+
+.menu a:hover,
+.menu a:active {
+    color: var(--red);
+}
+
+.menu li {
+    line-height: 2.1875rem;
+    text-align: center;
+    flex: 1 0 50%;
+}
+
+/* ***************** form ********************* */
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.875rem;
+}
+
+form div {
+    margin-bottom: 1.5rem;
+}
+
+input, 
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #e8e8e8;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 18.75rem;
+}
+
+input[type=submit] {
+    background-color: #fff;
+    font-weight: bold;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    transition: padding-left 1s ease;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+    color: var(--red);
+    padding-left: 1.25rem;
+}
+
+/* TODO: resize the checkbox to 24px x 24px and place the label on the right */
+input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+}
+
+.accept-button {
+    display: flex;
+    align-items: flex-end;
+}
+
+.accept-button label {
+    font-size: 16px;
+}
+
+/* media query for the header links only */
+@media only screen and (min-width: 450px) {
+    .menu li {
+        /* auto is the keyword for the default, content width - resets the item back to its original width */
+        flex: 0 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1260px) {
+    .inner-container,
+    section {
+        max-width: 1200px;
+        padding: 1rem 0;
+        margin: 0 auto;
+    }
+
+    /* TODO: on the wider screen adjust and layout the form to 2 equal columns */
+    form fieldset{
+        display: flex;
+        flex-flow: wrap;
+        gap: 4%;
+    }
+
+    fieldset h3 {
+        width: 100%;
+    }
+
+    fieldset div {
+        flex: 0 0 48%;
+    }
+    
+}
